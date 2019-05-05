@@ -15,7 +15,7 @@ function App() {
   return (
     <Wrapper>
       <Title>Paintings List</Title>
-      {this.state.paintings.map(painting => (
+      {paintings.map(painting => (
         <PaintingCard
           id={painting.id}
           key={painting.id}
