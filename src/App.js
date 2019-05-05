@@ -14,7 +14,7 @@ function App() {
 
   return (
     <Wrapper>
-      <Title>Paintings List</Title>
+      <Title>Desserts</Title>
       {paintings.map(painting => (
         <PaintingCard
           id={painting.id}

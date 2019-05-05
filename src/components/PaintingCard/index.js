@@ -1,14 +1,16 @@
 import React from "react";
 import "./style.css";
 
-function FriendCard(props) {
+function ImageCard(props) {
     return (
         <div className="card">
-            <div className="img-container">
-                <img alt={props.name} src={props.image} />
-            </div>
+            <div className="card-body">
+                <div className="img-container">
+                    <img alt={props.name} src={props.image} />
+                </div>
+                </div>
         </div>
     );
 }
 
-export default FriendCard;
+export default ImageCard;
