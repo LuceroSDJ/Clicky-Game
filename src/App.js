@@ -30,6 +30,20 @@ class App extends React.Component {
 
   };
 
+  // I want to push the id or name of the clicked image into a new array. Use filter
+  // so I need a check point to make sure only 1st time clicked images are pushed
+
+  //if image is not found in the new array, push the name/id
+  //if image is found in the new array, 
+    // set score to zero
+    // clear new array
+
+
+
+
+
+
+  //PROVABLY NOT THE BEST OPTION🤔
   // if same image is clicked twice, reset score back to zero
   doubleClicked = () => {
     this.setState({
@@ -52,8 +66,8 @@ class App extends React.Component {
   render() {
     return (
       <Wrapper>
-      <Nav>Clicky Game!
-        Score={this.state.count}
+      <Nav currentScore={this.state.count}>Clicky Game!
+        
       </Nav>
         <Title>Desserts</Title>
         {/* The map() method takes in desserts array & creates a new array */}
