@@ -1,0 +1,21 @@
+.navbar {
+    background: steelblue;
+    position: fixed;
+    height: 100px;
+    width: 100%;
+    box-shadow: 0 3px 6px #999, 0 3px 6px #999;
+    text-align: center !important;
+}
+
+.navbar-brand {
+    color: white;
+    font-family: 'Cinzel', serif;
+    font-size: 40px;
+}
+
+li {
+    display: inline-block;
+    font-size: 35px;
+    color: white;
+    font-family: 'Federant', cursive;
+}
