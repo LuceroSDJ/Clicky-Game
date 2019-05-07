@@ -19,3 +19,9 @@ li {
     color: white;
     font-family: 'Federant', cursive;
 }
+
+.instructions {
+    color: white;
+    font-family: 'Federant', cursive;
+    font-size: 30px;
+}
