@@ -1,7 +1,8 @@
 [
     {
       "id": 1,
-      "image": "./assets/images/berries.jpg"
+      "image": "./assets/images/berries.jpg",
+      "name": "berries"
     },
     {
       "id": 2,

@@ -16,28 +16,44 @@ class App extends React.Component {
   // Setting the initial state of the Counter component
   state = {
     count: 0,
-    welcome: "CLICK! CLICK! CLICK!"
+    welcome: "CLICK! CLICK! CLICK!",
+    initializeNewArray: [],
+    desserts,
+    reset: false
   };
 
   // Note: "We only use this.state in the constructors"
 
   // handleIncrement increases this.state.count by 1
-  handleIncrement = (id) => {
+  handleIncrement = () => {
       // We always use the setState method to update a component's state
-      this.setState({ count: this.state.count + 1,
-        clicked: true
+      this.setState({ count: this.state.count + 1, desserts:this.shuffle(desserts)
+        // clicked: true
       });
       console.log(this.state.count);
-
   };
+
+  //reset game
+  resetGame = () => {
+    this.setState({ count: 0});
+    this.setState({ reset: true});
+    console.log("resetting game at app js")
+  }
+
+  shuffle = (array) => {
+    array.sort(() => Math.random()- 0.5)
+    return array;
+  }
+
+ 
 
   // I want to push the id or name of the clicked image into a new array. Use filter
   // so I need a check point to make sure only 1st time clicked images are pushed
   pushIntoNewArray = id => {
     // Filter this.state.newArray for desserts with an id not equal to the ids already pushed into the new array
-    const initializeNewArray = this.state.initializeNewArray.filter(dessert => dessert.id !== id);
+    const initializeNewArray = this.state.initializeNewArray.filter(dessert => dessert.id !== id).push(this.state.pushIntoNewArray);
     this.setState({ initializeNewArray});
-    console.log(initializeNewArray);
+    console.log(id);
   };
 
   //if image is not found in the new array, push the name/id
@@ -77,6 +93,7 @@ class App extends React.Component {
 
 
   render() {
+    //console.log("im calling render again");
     setTimeout(() => {
       this.setState({welcome: " 🍩 Do not click a desset twice! 🍮"});
     }, 3000)
@@ -86,18 +103,21 @@ class App extends React.Component {
       <Nav currentScore={this.state.count} instructions={this.state.welcome}> 
       {/* <Nav currentScore={this.state.count}>  */}
       Clicky Game! 
-      {/* <span role="img" arial-label="cake">  🍩 </span> */}
+      <span role="img" arial-labellby= "🍩" />
       </Nav>
         <Title>Desserts</Title>
         {/* The map() method takes in desserts array & creates a new array */}
         {desserts.map(dessert => (
           <DessertCard
+          // initializeNewArray={this.pushIntoNewArray}
           id={dessert.id}
-            key={dessert.id}
-            image={dessert.image} 
-            handleIncrement={this.handleIncrement}
-            //remove this line below
-            ClickCount={this.state.count}
+          key={dessert.id}
+          image={dessert.image} 
+          handleIncrement={this.handleIncrement}
+          resetGame={this.resetGame}
+          reset= {this.reset}
+          //register click: commented out button below each image(to be deleted)
+          // ClickCount={this.state.count}
           />
         ))}
       </Wrapper>
