@@ -2,34 +2,42 @@
     {
       "id": 1,
       "image": "./assets/images/berries.jpg",
-      "name": "berries"
+      "name": "berries",
+      "clicked": false
     },
     {
       "id": 2,
-      "image": "./assets/images/berriesTart.jpg"
+      "image": "./assets/images/berriesTart.jpg",
+      "clicked": false
     },
     {
       "id": 3,
-      "image": "./assets/images/miniTarts.jpg"
+      "image": "./assets/images/miniTarts.jpg",
+      "clicked": false
     },
     {
       "id": 4,
-      "image": "./assets/images/fruitCake.jpg"
+      "image": "./assets/images/fruitCake.jpg",
+      "clicked": false
     },
     {
       "id": 5,
-      "image": "./assets/images/fruitTart.jpg"
+      "image": "./assets/images/fruitTart.jpg",
+      "clicked": false
     },
     {
       "id": 6,
-      "image": "./assets/images/orangeCheesecake.jpg"
+      "image": "./assets/images/orangeCheesecake.jpg",
+      "clicked": false
     },
     {
       "id": 7,
-      "image": "./assets/images/passionFruit.jpg"
+      "image": "./assets/images/passionFruit.jpg",
+      "clicked": false
     },
     {
       "id": 8,
-      "image": "./assets/images/strawberryCake.jpeg"
+      "image": "./assets/images/strawberryCake.jpeg",
+      "clicked": false
     }
   ]

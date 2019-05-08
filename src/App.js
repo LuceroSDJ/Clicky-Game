@@ -17,12 +17,17 @@ class App extends React.Component {
   state = {
     count: 0,
     welcome: "CLICK! CLICK! CLICK!",
-    initializeNewArray: [],
-    desserts,
-    reset: false
+    // initializeNewArray: [],
+    desserts
   };
 
-  // Note: "We only use this.state in the constructors"
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({welcome: " 🍩 Do not click a desset twice! 🍮"});
+    }, 3000);
+  }
+
+  // DOCUMENTATION: "We only use this.state in the constructors"
 
   // handleIncrement increases this.state.count by 1
   handleIncrement = () => {
@@ -36,19 +41,20 @@ class App extends React.Component {
   //reset game
   resetGame = () => {
     this.setState({ count: 0});
-    this.setState({ reset: true});
+    //reset image value to false 
     console.log("resetting game at app js")
-  }
+  };
 
   shuffle = (array) => {
     array.sort(() => Math.random()- 0.5)
     return array;
-  }
+  };
 
  
-
+//================= TEST FUNCTIONS ========================
   // I want to push the id or name of the clicked image into a new array. Use filter
   // so I need a check point to make sure only 1st time clicked images are pushed
+  
   pushIntoNewArray = id => {
     // Filter this.state.newArray for desserts with an id not equal to the ids already pushed into the new array
     const initializeNewArray = this.state.initializeNewArray.filter(dessert => dessert.id !== id).push(this.state.pushIntoNewArray);
@@ -66,11 +72,6 @@ class App extends React.Component {
   //     pushIntoNewArray()
   //   });
   // }
-
-
-
-
-
 
   //PROVABLY NOT THE BEST OPTION🤔
   // if same image is clicked twice, reset score back to zero
@@ -90,13 +91,10 @@ class App extends React.Component {
       this.doubleClicked();
     }
   }
-
+//=================================================================
 
   render() {
     //console.log("im calling render again");
-    setTimeout(() => {
-      this.setState({welcome: " 🍩 Do not click a desset twice! 🍮"});
-    }, 3000)
     return (
       <Wrapper>
       {/* setState(INSTRUCTIONS) 😎 */}
@@ -115,7 +113,6 @@ class App extends React.Component {
           image={dessert.image} 
           handleIncrement={this.handleIncrement}
           resetGame={this.resetGame}
-          reset= {this.reset}
           //register click: commented out button below each image(to be deleted)
           // ClickCount={this.state.count}
           />

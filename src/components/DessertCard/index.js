@@ -5,7 +5,7 @@ import "./style.css";
 // function DessertCard(props) {
 class DessertCard extends React.Component {
   state = {
-    isClicked: "false"  
+    isClicked: false
   };
 
   twoFunctions = () => {
@@ -14,14 +14,14 @@ class DessertCard extends React.Component {
     //console.log(this.state.isClicked);
     //onClick add one to score
     //on Click change default value to true
-    if(this.state.isClicked === "true") {
+    if(this.state.isClicked) {
       //create resetGame in app.js
       console.log("resetting game");
       this.props.resetGame();
-      this.setState({ isClicked: "false" })
+      this.setState({ isClicked: false})
       // this.props.isClicked=true
     } else {
-      this.setState({ isClicked: "true" })
+      this.setState({ isClicked: true })
       //this.setState({ count: this.state.count + 1});
       console.log(this.state.isClicked);
       this.props.handleIncrement(this.props.id);
@@ -31,10 +31,12 @@ class DessertCard extends React.Component {
   
 
   render() {
-    //this.setState({isClicked: this.props.isClicked});
-    if(this.props.reset){
-      this.setState({isClicked: "false"})
+    if(this.state.isClicked)
+    {
+      console.log(this.props);
     }
+    
+    //this.setState({isClicked: this.props.isClicked});
     return (
       <div className="card">
         <div className="card-body">
@@ -42,7 +44,8 @@ class DessertCard extends React.Component {
             {/* commented out line 11 to test line handling increments & pushing into new array */}
             {/* default value set to false */}
             {/* <img value={props.isClicked} alt={props.name} src={props.image} onClick={() => twoFunctions()}/> */}
-            <img value={this.state.isClicked} alt={this.props.name} src={this.props.image} onClick={() => this.twoFunctions()}/>
+            {/* <img value={this.state.isClicked} alt={this.props.name} src={this.props.image} onClick={() => this.twoFunctions()}/> */}
+            <img alt={this.props.name} src={this.props.image} onClick={() => this.twoFunctions()}/>
             {/* test did not work. Check syntax */}
             {/* <img alt={props.name} src={props.image} onClick={() => 
             (
