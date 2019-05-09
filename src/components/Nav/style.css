@@ -25,3 +25,31 @@ li {
     font-family: 'Federant', cursive;
     font-size: 30px;
 }
+
+/****************MEDIA QUERIES******************/
+/** desktop layout size **/
+/** changed size from 882px to 980px **/
+@media screen and (max-width: 980px) {
+    .navbar {
+        height: 115px;
+    }
+}
+
+/** tablet screen size **/
+@media screen and (max-width: 768px) {
+    /** 576px to 691px **/
+    .navbar {
+        height: 140px;
+    }
+}
+
+/** phone in landscape screen size **/
+@media screen and (max-width: 640px) {
+    /** changes size from 576px to ----px **/
+    li {
+        font-size: 30px;
+    }
+    .navbar {
+        height: 155px;
+    }
+}

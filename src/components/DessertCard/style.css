@@ -20,7 +20,40 @@
   height: 250px;
 }
 
+/****************MEDIA QUERIES******************/
+/** desktop layout size **/
+@media screen and (max-width: 980px) {
+/** changes size from 882px to 980px **/
+  .card {
+    height: 260px;
+    width: 260px;
+  }
+  .card-body > .img-container > img {
+    height: 225px;
+  }
+}
 
-.card > .content > ul > li {
-  margin-top: 18px;
+/** tablet screen size **/
+@media screen and (max-width: 768px) {
+/** 576px to 691px **/
+  .card {
+    height: 245px;
+    width: 245px;
+  }
+  .card-body > .img-container > img {
+    height: 210px;
+  }
+
+}
+
+/** phone in landscape screen size **/
+@media screen and (max-width: 640px) {
+/** changes size from 576px to ----px **/
+  .card {
+    height: 230px;
+    width: 230px;
+  }
+  .card-body > .img-container > img {
+    height: 200px;
+  }
 }

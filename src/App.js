@@ -17,7 +17,6 @@ class App extends React.Component {
   state = {
     count: 0,
     welcome: "CLICK! CLICK! CLICK!",
-    // initializeNewArray: [],
     desserts
   };
 
