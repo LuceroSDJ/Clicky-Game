@@ -17,7 +17,8 @@ class App extends React.Component {
   state = {
     count: 0,
     welcome: "CLICK! CLICK! CLICK!",
-    desserts
+    desserts,
+    topScore: 0
   };
 
   componentDidMount() {
@@ -37,6 +38,12 @@ class App extends React.Component {
       console.log(this.state.count);
   };
 
+  topScore = () => {
+    if(this.state.count > this.state.topScore) {
+      this.setState({ topScore: this.state.count});
+    }
+  }
+
   //reset game
   resetGame = () => {
     this.setState({ count: 0});
@@ -48,49 +55,6 @@ class App extends React.Component {
     array.sort(() => Math.random()- 0.5)
     return array;
   };
-
- 
-//================= TEST FUNCTIONS ========================
-  // I want to push the id or name of the clicked image into a new array. Use filter
-  // so I need a check point to make sure only 1st time clicked images are pushed
-  
-  pushIntoNewArray = id => {
-    // Filter this.state.newArray for desserts with an id not equal to the ids already pushed into the new array
-    const initializeNewArray = this.state.initializeNewArray.filter(dessert => dessert.id !== id).push(this.state.pushIntoNewArray);
-    this.setState({ initializeNewArray});
-    console.log(id);
-  };
-
-  //if image is not found in the new array, push the name/id
-  //if image is found in the new array, 
-    // set score to zero
-    // clear new array
-  // conditions = () => {
-  //   if(!initializeNewArray.includes(dessert.id) {
-  //     handleIncrement(),
-  //     pushIntoNewArray()
-  //   });
-  // }
-
-  //PROVABLY NOT THE BEST OPTION🤔
-  // if same image is clicked twice, reset score back to zero
-  doubleClicked = () => {
-    this.setState({
-      clicked: false,
-      score: 0
-    });
-  };
-
-  imageClick = () => {
-    let clicked=false
-    if(clicked) {
-      this.handleIncrement();
-    }
-    else {
-      this.doubleClicked();
-    }
-  }
-//=================================================================
 
   render() {
     //console.log("im calling render again");

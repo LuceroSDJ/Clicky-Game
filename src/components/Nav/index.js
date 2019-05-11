@@ -15,9 +15,9 @@ function Nav(props) {
                 <li className="score">
                 Score: <strong>{props.currentScore}</strong>
                 </li>
-                <li>
+                {/* <li>
                 ⌇ Top Score: {props.topScore}
-                </li>
+                </li> */}
             </ul>
         </nav>
     ); 
